@@ -1,0 +1,16 @@
+.vendor.active
+{
+    border-color: var(--main-color);  
+}
+.vendor.active h6
+{
+    color:var(--main-color);  
+}
+.vendor.normal
+{
+    border: 1 solid gray;
+}
+.vendor.normal h6
+{
+    color:black
+}
