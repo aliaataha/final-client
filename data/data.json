@@ -1,0 +1,25 @@
+
+    {
+        "categories": [
+            {
+                "id": 1,
+                "name": "Vegetables",
+                "img":"assets/vegetables.svg"
+            },
+            {
+                "id": 2,
+                "name": "Fruits",
+                "img": "assets/fruits.svg"
+            },
+            {
+                "id": 3,
+                "name": "Cold Drinks",
+                "img": "assets/drink.svg"
+            },
+            {
+                "id": 4,
+                "name": "Bakery",
+                "img": "assets/bakery.svg"
+            }
+        ]
+    }

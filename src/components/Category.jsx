@@ -5,7 +5,7 @@ import { useCategory } from '../hooks/useCategories'
 import Slider from './Slider'
 export default function Category() {
     const { data, isLoading, error } = useCategory()
-    const categories = data?.data?.data?.map(ele => (ele))
+    const categories = data
     const cards=categories?.map((category, index) => (
         <CategoryCard category={category} key={index} bg_color={categoryColors[index]}  />
      ))

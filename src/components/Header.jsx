@@ -19,9 +19,9 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selectedCategory,setSelectedCategory]=useState(null)
     const { data, isLoading, error } = useCategory()
-    const  categories=data?.data?.data?.map(category => (category.name))
-    if (isLoading) return <p>Loading...</p>
-    if (error) return <p>Error: {error.message}</p>
+    const categories = data?.map(category => category.name) || []
+    // if (isLoading) return <p>Loading...</p>
+    // if (error) return <p>Error: {error.message}</p>
     
   return (
   <>
