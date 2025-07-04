@@ -12,11 +12,13 @@ import TestimonialsSection from './components/TestimonialsSection'
 import BlogCard from './components/BlogCard'
 import { blogs, instagramImages } from './data/data'
 import InstagramCard from './components/InstagramCard'
+import Setting from './components/Setting'
 
 export default function App() {
   
   return (
- <>
+    <>
+      <Setting/>
       <Header />   
       <HeroBanner />
       <Category />

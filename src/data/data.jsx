@@ -197,4 +197,5 @@ export const contact_info =
         }
 
     ]
-export const social_media_icons=[<BiLogoFacebook className='text-[white] text-[1.3rem]' />,<FaTwitter className='text-[white] text-[1.3rem]'/>,<TiSocialLinkedin className='text-[white] text-[1.3rem]'/>,<PiInstagramLogoBold  className='text-[white] text-[1.3rem]'/>]
+export const social_media_icons = [<BiLogoFacebook className='text-[white] text-[1.3rem]' />, <FaTwitter className='text-[white] text-[1.3rem]' />, <TiSocialLinkedin className='text-[white] text-[1.3rem]' />, <PiInstagramLogoBold className='text-[white] text-[1.3rem]' />]
+export const color_setting=["#6c7fd8","#8118d5","#5f6af5","#f5885f","#32dbe2","#3f51b5","#f44336","#e91e63","#607d8b","#5eb595"]
