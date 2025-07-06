@@ -1,24 +1,17 @@
 import React, { useState } from 'react'
 import Logo from './Logo'
 import { FaAngleDown } from "react-icons/fa";
-import { CiLocationOn } from "react-icons/ci";
-import { BiLogoWhatsapp } from "react-icons/bi";
-import { HiOutlineEnvelope } from "react-icons/hi2";
-import { BiLogoFacebook } from "react-icons/bi";
-import { TiSocialLinkedin } from "react-icons/ti";
-import { PiInstagramLogoBold } from "react-icons/pi";
-import { FaTwitter } from "react-icons/fa6";
 import { contact_info, dataFooter, social_media_icons } from '../data/data';
 import FooterColumn from './FooterColumn';
-
+import { useTheme } from '../store/useTheme';
 
 export default function Footer() {
- 
+    const { theme } = useTheme()
     const [active, setActive] = useState(null)
     const [show, setShow] = useState(false)
   return (
-      <div className=' bg-gray-100'>
-          <div className="top grid grid-cols-12 gap-[1.3rem] py-10 px-[var(--l-px)]  border-y border-gray-200 ">
+      <div className={`${theme === "light" ? 'bg-[var(--light-gray)]' : 'bg-[var(--dark-color)]'}`}>
+          <div className={`top grid grid-cols-12 gap-[1.3rem] py-10 px-[var(--l-px)]  border-y   ${theme === "light" ? 'border-gray-200' : 'border-gray-600'} `}>
               <div className="flex flex-col gap-[1rem] lg:col-span-3 col-span-12">
                   <Logo />
                   <p className='text-[var(--medium-gray)]'>BlueBerry is the biggest market of grocery products. Get
@@ -35,7 +28,7 @@ export default function Footer() {
                       ))
               }
                   <div className="lg:w-[44%] w-full">
-                      <div className="flex justify-between items-center border-b border-b-gray-200" onClick={() => { setShow(!show); setActive(null)}} >
+                      <div className={`flex justify-between items-center border-b  ${theme === "light" ? 'border-gray-200' : 'border-gray-600'}`} onClick={() => { setShow(!show); setActive(null)}} >
                           <h4 className='text-[1.2rem] opacity-80 font-medium  pb-3'>contact</h4>
                           <FaAngleDown  className='lg:hidden block'/>
                       </div>

@@ -7,8 +7,8 @@ export default function UserAction({icon,topText,bottomText,onMouseEnter, onMous
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}>
          <div className="icon">{icon}</div>
-         <div className="content  flex-col gap-.5 hidden lg:flex">
-              <span>{topText}</span>
+         <div className="content  flex-col gap-.5 hidden lg:flex ">
+              <span className='text-[var(--medium-gray)]'>{topText}</span>
               <span className='font-semibold'>{bottomText}</span>
          </div>
              {children }

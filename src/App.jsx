@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './components/Header'
 import HeroBanner from './components/HeroBanner'
 import Footer from './components/Footer'
@@ -13,9 +13,23 @@ import BlogCard from './components/BlogCard'
 import { blogs, instagramImages } from './data/data'
 import InstagramCard from './components/InstagramCard'
 import Setting from './components/Setting'
+import { useTheme } from './store/useTheme'
+
 
 export default function App() {
-  
+  const { theme } = useTheme()
+  useEffect(() => {
+    if (theme == "light")
+    {
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    }
+    else
+    {
+      document.body.style.backgroundColor = "#22252f";
+      document.body.style.color="white"
+    }
+  },[theme])
   return (
     <>
       <Setting/>

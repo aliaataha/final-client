@@ -10,8 +10,9 @@ import UserAction from './UserAction';
 import { user_actions } from '../data/data';
 import { IoClose } from "react-icons/io5";
 import NavLinks from './NavLinks';
-
+import { useTheme } from '../store/useTheme';
 export default function Header() {
+    const { theme } = useTheme()
     const items = ["login", "register", "checkout"]
     const [show, setShow] = useState(false)
     const [showCategories, setShowCategories] = useState(false)
@@ -27,20 +28,21 @@ export default function Header() {
   <>
     <div>
           <header className='grid'>
-            <div className="top-header col-span-12 grid grid-cols-12  lg:gap-x-[1.3rem]  md:gap-x-[1.3rem] items-center lg:border-b border-gray-200 py-5  lg:px-[6.25rem] md:px-[3.125rem] gap-y-[1.2rem] px-[7.5rem]">
+            <div className="top-header col-span-12 grid grid-cols-12  lg:gap-x-[1.3rem]  md:gap-x-[1.3rem] items-center  py-5  lg:px-[6.25rem] md:px-[3.125rem] gap-y-[1.2rem] px-[7.5rem]">
                <div className="logo lg:col-span-2 md:col-span-2 col-span-12">
                    <Logo />
                </div>
-               <div className="search border border-gray-200 text-[var(--medium-gray)] rounded-lg lg:col-span-5 md:col-span-6  col-span-12">
+            <div className={`search border  ${theme === "light" ? 'border-gray-200' : 'border-gray-600'} text-[var(--medium-gray)] rounded  lg:col-span-5 md:col-span-6  col-span-12`}>
                   <form action="" className='grid grid-cols-12'>
-                          <div className="select relative lg:col-span-4 hidden lg:block "  onMouseEnter={()=>setShowCategories(true)} onMouseLeave={()=>setShowCategories(false)}>
-                              <div className="header lg:flex justify-between cursor-pointer items-center border-r border-gray-200 lg:p-3 p-2 " >
+                <div className={`select relative lg:col-span-4 hidden lg:block rounded  ${theme === "light" ? 'bg-[var(--light-gray)]' : 'bg-[var(--dark-color)]'} `}
+                  onMouseEnter={() => setShowCategories(true)} onMouseLeave={() => setShowCategories(false)}>
+                  <div className={`header lg:flex justify-between cursor-pointer items-center border-r  ${theme === "light" ? 'border-gray-200' : 'border-gray-600'} lg:p-3 p-2 `} >
                   <div className="select-item">{selectedCategory ?? categories[0]}</div>
                                   <div className="icon"><MdKeyboardArrowDown /></div>
                               </div>
                               <Dropdown items={categories}  show={showCategories} selectedState={setSelectedCategory}/>
                           </div>     
-                <input type="text" name="" id="" placeholder='search products....' className='lg:col-span-7 col-span-11 placeholder-[var(--medium-gray)] outline-0 font-thin lg:p-3 p-2'
+                <input type="text" name="" id="" placeholder='search products....' className={`lg:col-span-7 col-span-11 placeholder-[var(--medium-gray)] outline-0 font-thin lg:p-3 p-2 ${theme === "light" ? 'bg-[var(--light-gray)]' : 'bg-[var(--dark-color)]'}`}
                   onChange={((e) => {
                     if (e.target.value.trim() != "")
                     {
@@ -52,7 +54,7 @@ export default function Header() {
                       }
                    })} />
                          
-                         <button   disabled={!activeBtn} type='button' className={`${activeBtn?'text-gray-700 scale-110 cursor-pointer transition ':'text-gray-100 scale-100 cursor-not-allowed'}  lg:col-span-1 col-span-1`} onClick={()=>setActiveBtn(false)}><CiSearch  className=' h-[1.5rem] w-[1.5rem]'/></button>
+                         <button   disabled={!activeBtn} type='button' className={`${activeBtn?'text-gray-700 scale-110 cursor-pointer transition ':'text-gray-100 scale-100 cursor-not-allowed'}  ${theme === "light" ? 'bg-[var(--light-gray)]' : 'bg-[var(--dark-color)]'}  lg:col-span-1 col-span-1`} onClick={()=>setActiveBtn(false)}><CiSearch  className=' h-[1.5rem] w-[1.5rem]'/></button>
                  </form>
                </div>
                <div className="user-action flex lg:gap-[.5rem] gap-[1rem] justify-center  lg:col-span-5 md:col-span-4 col-span-12  ">
@@ -80,7 +82,7 @@ export default function Header() {
             
                </div>
             </div>
-            <nav className=' px-[100px] py-5 col-span-12 lg:block hidden'>
+            <nav className={`px-[100px] py-5 col-span-12 lg:block hidden border-y  ${theme === "light" ? 'border-gray-200' : 'border-gray-600'} ${theme === "light" ? 'bg-[var(--light-gray)]' : 'bg-[var(--dark-color)]'}`}>
                       <NavLinks class_name='flex gap-7 text-xl'/>
             </nav> 
          

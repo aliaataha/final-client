@@ -120,7 +120,13 @@
   border-radius: 30%;
   bottom: 0;
   left: 0;
+ 
+}
+.curved-corner-bottomleft-left.light:before,.curved-corner-bottomleft-right.light:before {
   box-shadow: -50px 50px 0 0 white;
+}
+.curved-corner-bottomleft-left.dark:before,.curved-corner-bottomleft-right.dark:before {
+  box-shadow: -50px 50px 0 0 #22252f;
 }
 .curved-corner-bottomleft-right:before 
 {
@@ -138,10 +144,7 @@
   transform: rotate(0deg);
  transform: scale(1.1);
 }
-.blog-card:hover .content
-{
-  background-color: white;
-}
+
 .insta-card:hover .layer
 {
     opacity: 100%;
@@ -186,4 +189,19 @@
 }
 .insta-icon-animated-reverse {
   animation: rotateIconReverse .1s ease-in-out forwards;
+}
+.theme-color.selected::after
+{
+  content:url("data:image/svg+xml,%3Csvg%20stroke%3D%22white%22%20fill%3D%22white%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%2024%2024%22%20height%3D%2220px%22%20width%3D%2220px%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M11.602%2013.7599L13.014%2015.1719L21.4795%206.7063L22.8938%208.12051L13.014%2018.0003L6.65%2011.6363L8.06421%2010.2221L10.189%2012.3469L11.6025%2013.7594L11.602%2013.7599ZM11.6037%2010.9322L16.5563%205.97949L17.9666%207.38977L13.014%2012.3424L11.6037%2010.9322ZM8.77698%2016.5873L7.36396%2018.0003L1%2011.6363L2.41421%2010.2221L3.82723%2011.6352L3.82604%2011.6363L8.77698%2016.5873Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+  position: absolute;
+  top:10px;
+  left:10px
+
+}
+.img.selected::after
+{
+  content:url("data:image/svg+xml,%3Csvg%20stroke%3D%22white%22%20fill%3D%22white%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%2024%2024%22%20height%3D%2240px%22%20width%3D%2240px%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M11.602%2013.7599L13.014%2015.1719L21.4795%206.7063L22.8938%208.12051L13.014%2018.0003L6.65%2011.6363L8.06421%2010.2221L10.189%2012.3469L11.6025%2013.7594L11.602%2013.7599ZM11.6037%2010.9322L16.5563%205.97949L17.9666%207.38977L13.014%2012.3424L11.6037%2010.9322ZM8.77698%2016.5873L7.36396%2018.0003L1%2011.6363L2.41421%2010.2221L3.82723%2011.6352L3.82604%2011.6363L8.77698%2016.5873Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+  position: absolute;
+  top:30px;
+  left:40px
 }
