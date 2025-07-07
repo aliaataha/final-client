@@ -13,7 +13,7 @@ export default function Setting() {
     const {theme,lightTheme,darkTheme} =useTheme()
     return (
         <>
-             <div className='p-2 bg-cyan-950  fixed right-0 top-[50%] rounded-xl cursor-pointer'>
+             <div className='p-2 bg-cyan-950  fixed z-100 right-0 top-[50%] rounded-xl cursor-pointer'>
                  <IoSettingsOutline className='h-[1.8rem] w-[1.8rem] text-white'  onClick={()=>setShow(true)}/>
             </div>
             <div className={`setting fixed top-0 left-0 w-full h-[100vh] bg-[rgba(0,0,0,.6)] flex justify-end  ${show?'opacity-100 visible z-100':'opacity-0 invisible'}`} onClick={()=>setShow(false)}>
